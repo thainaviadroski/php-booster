@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans@1&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body{
+  height: 100vh;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}
+
+
+.box_login{
+  width: 500px;
+  height: 500px;
+  background: #1D3557; 
+  border-radius: 2%;
+}
+
+.box_login .cover{
+  height: 230px;
+  background: url(../img/cover.jpg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2% 2% 0 0; 
+}
+
+h1{
+  padding: 8px;
+  color: #FFFFFF;
+  font-size: 22px;
+  text-align: left;
+}
+
+form{
+  padding: 16px;
+}
+
+form input{
+  width: 100%;
+  padding: 4px 8px;
+  margin-top: 4px;
+  border-radius: 2px;
+  border: 0px;
+  font-size: 14px;
+}
+form label{
+  color:#457B9D;
+  font-weight: 900;
+}
+form .buttons{
+  display: flex;
+  justify-content: center;
+}
+form .btn_login{
+  background-color: #457B9D;
+  color: #F1FAEE;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 4px;
+  border: 0px;
+  margin-top: 16px;  
+  border-radius: 8px;
+  width: 40%;
+ 
+}
+
+form .btn_forget{
+  border:1px solid #A8DADC;
+  background-color:#1D3557;
+  color: #F1FAEE;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 4px;
+  margin-top: 16px;
+  border-radius: 8px;
+  width: 40%;
+  margin-left: 8px;
+}
+
+form .btn_login:hover{
+  background-color: #A8DADC;
+  color: #1D3557;
+  transition: background-color 0.5s;
+}
+
+
+form .btn_forget:hover{
+  border:1px solid #E63946;
+  color: #E63946;
+  transition: all 0.5s;
+
+}
+form .msg_hidden{
+  text-align: center;
+  padding:8px;
+  width: 100%;
+  display: none;
+}
+.msg_show{
+  display: block;
+  text-align: center;
+  padding:8px;
+  width: 100%;
+}
+form .msg_error{  
+  width: 100%;
+  color:#E63946;
+}
