@@ -1,5 +1,6 @@
 <?php 
 
+  use Data\Database\Connection;
   class User{
 
     // Attributes 
@@ -8,6 +9,30 @@
     private $email;
     private $password;
 
+    public function validateLogin(){
+
+      $conn = Connection::getConn();
+      
+      $sql = 'SELECT * FROM user WHERE email = :email';
+
+      $stmt= $conn->prepare($sql);
+      $stmt->bindValue(':email', $this->email);
+      $stmt->execute();
+
+      if($stmt->rowCount()){
+        $result = $stmt->fetch();
+
+        if($result['password'] === $this->password){
+          $_SESSION['usr']= array('id_user' =>$result['id'], 'name_user' => $result['name']);
+
+          return true;
+        }
+      }
+
+      throw new \Exception('Login Invalido!');
+
+
+    }
 
     // Method setter 
     public function setEmail($email){
@@ -23,15 +48,7 @@
       $this->password = $password;
       
     }
-    public function validateLogin(){
-      /*
-      * 1ºConection database. 
-      * 2ª Select the user,  using email column.
-      * 3ª Validate password.
-      * 4ª If all data is valid create the session
-      * 5ª In case of error, it returns to the initial screen, with an error message.
-      */
-    }
+
 
     // Method getter 
      public function getName(){

@@ -21,11 +21,13 @@
 
       <div class="buttons">        
         <button value="" class="btn_login">Entrar</button>
-        <button value="" class="btn_forget">Recuperar Senha</button>
+        <!-- <button value="" class="btn_forget">Recuperar Senha</button> -->
       </div>
       
       <div class="msg_show">
-       <span class="msg_error "><i class="fas fa-exclamation-triangle"></i> Tentativa inválida!</span>
+        {% if error != ''%}  
+          <span class="msg_error "><i class="fas fa-exclamation-triangle"></i> Tentativa inválida!</span>
+        {% endif%}
       </div>
    </form>
 
