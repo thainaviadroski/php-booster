@@ -57,10 +57,7 @@ class Core
         $this->controller ='LoginController';
         $this->method='index';
       }
-
     }
-
     return call_user_func(array(new $this->controller, $this->method), $this->params);
-    //var_dump($this->controller, $this->method, $this->params);
   }
 }
